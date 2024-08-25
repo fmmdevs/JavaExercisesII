@@ -11,9 +11,22 @@ public class CheckRelationsBetweenNumbers {
         String[] elements = relations.replace(" ", "").splitWithDelimiters("[<>=]", -1);
         System.out.println(Arrays.toString(elements));
 
-        int firstNumber;
-        int secondNumber;
-        String relation;
+        int firstNumber = Integer.parseInt(elements[0]);
+        String relation = elements[1];
+        int secondNumber = Integer.parseInt(elements[2]);
+
+        if (elements.length == 3) {
+            switch (relation) {
+                case "<":
+                    return firstNumber < secondNumber;
+                case ">":
+                    return firstNumber > secondNumber;
+                case "=":
+                    return firstNumber == secondNumber;
+                default:
+                    System.out.println("Wrong relation");
+            }
+        }
 
         for (int i = 0; i < elements.length - 3; i += 2) {
             System.out.printf("%s%s%s%n", elements[i], elements[i + 1], elements[i + 2]);
@@ -29,8 +42,8 @@ public class CheckRelationsBetweenNumbers {
                 if (!(firstNumber > secondNumber)) return false;
             }
 
-            if(relation.equals("=")){
-                if(!(firstNumber==secondNumber)) return false;
+            if (relation.equals("=")) {
+                if (!(firstNumber == secondNumber)) return false;
             }
         }
 
@@ -39,7 +52,7 @@ public class CheckRelationsBetweenNumbers {
 
     public static void main(String[] args) {
         String relations1 = "1 < 2 > 1 < 10 = 10 > 2";
-        String relations2 = "1<1";
+        String relations2 = "1>1";
         String relations3 = "1<";
         String relations4 = "1";
 
