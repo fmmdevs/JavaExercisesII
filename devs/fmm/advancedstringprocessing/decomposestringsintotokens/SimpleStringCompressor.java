@@ -3,10 +3,10 @@ package devs.fmm.advancedstringprocessing.decomposestringsintotokens;
 import java.util.Arrays;
 
 public class SimpleStringCompressor {
+
     static String compress(String string) {
-
+        if (string.matches(".*[\\d]+.*")) throw new IllegalArgumentException("Only for texts with no digits");
         StringBuilder compressed = new StringBuilder();
-
         compressed.append(string.charAt(0));
 
         int counter = 1;
@@ -25,7 +25,7 @@ public class SimpleStringCompressor {
                     i++;
                     counter++;
 
-                    if (i == string.length() - 1){
+                    if (i == string.length() - 1) {
                         end = true;
                         break;
 
@@ -34,7 +34,7 @@ public class SimpleStringCompressor {
                     //System.out.printf("i = %d counter = %d%n",i,counter);
                 }
                 i--;
-                if(end){
+                if (end) {
                     counter++;
                 }
                 compressed.append(counter);
@@ -56,6 +56,12 @@ public class SimpleStringCompressor {
         System.out.println(compress(string));
         System.out.println(compress(string2));
 
+        String string3 = "fasdfsdfadfs3lkfjsladkfjañskf";
+        try {
+            System.out.println(compress(string3));
+        } catch (IllegalArgumentException e) {
+            System.out.println(e);
+        }
 
     }
 }
