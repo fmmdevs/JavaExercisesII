@@ -1,6 +1,4 @@
-package devs.fmm.mathematics;
-
-import java.util.Arrays;
+package devs.fmm.mathematics.rounding;
 
 public class CheckIfTinTinCheatedOnRounding {
     enum RoundingMode {
