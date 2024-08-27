@@ -80,7 +80,7 @@ public class Fraction extends Number implements Comparable<Fraction> {
 
     @Override
     public String toString() {
-        return "%d/%d".formatted(numerator, denominator);
+        return denominator==1 ? numerator+"" : "%d/%d".formatted(numerator, denominator);
     }
 
     @Override
@@ -198,6 +198,9 @@ public class Fraction extends Number implements Comparable<Fraction> {
         fractionList.add(f7);
 
         fractionList.add(new Fraction(-24,-15));
+        fractionList.add(new Fraction(34,-1));
+        fractionList.add(new Fraction(-2123,1));
+        fractionList.add(new Fraction(1231,1));
         System.out.println(fractionList);
         Collections.sort(fractionList);
         System.out.println(fractionList);
