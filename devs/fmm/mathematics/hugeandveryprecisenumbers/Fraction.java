@@ -1,10 +1,7 @@
 package devs.fmm.mathematics.hugeandveryprecisenumbers;
 
 import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Objects;
-import java.util.List;
+import java.util.*;
 
 public class Fraction extends Number implements Comparable<Fraction> {
     public final int numerator;
@@ -12,12 +9,20 @@ public class Fraction extends Number implements Comparable<Fraction> {
 
     public Fraction(int numerator, int denominator) {
         if (denominator == 0) throw new ArithmeticException("Denominator can't be zero");
-        /*if (numerator < 0 || denominator < 0)
-            throw new IllegalArgumentException("Both numerator and denominator must be positive integers");*/
+        BigInteger num;
+        BigInteger den;
+        if (numerator < 0 && denominator < 0) {
+            num = BigInteger.valueOf(Math.abs(numerator));
+            den = BigInteger.valueOf(Math.abs(denominator));
+        } else if (denominator < 0) {
+            num = BigInteger.valueOf(-numerator);
+            den = BigInteger.valueOf(Math.abs(denominator));
+        } else {
+            num = BigInteger.valueOf(numerator);
+            den = BigInteger.valueOf(denominator);
+        }
 
-        // simplification
-        BigInteger num = BigInteger.valueOf(Math.abs(numerator));
-        BigInteger den = BigInteger.valueOf(Math.abs(denominator));
+
         BigInteger gcd = num.gcd(den);
 
         this.numerator = num.divide(gcd).intValue();
@@ -112,8 +117,7 @@ public class Fraction extends Number implements Comparable<Fraction> {
 
         //System.out.println(Fraction.multiply(fraction2, fraction1));
 
-        // Crear 15 objetos Fraction
-        Fraction f1 = new Fraction(1, 2);
+       /* Fraction f1 = new Fraction(1, 2);
         Fraction f2 = new Fraction(2, 3);
         Fraction f3 = new Fraction(3, 4);
         Fraction f4 = new Fraction(4, 5);
@@ -129,7 +133,6 @@ public class Fraction extends Number implements Comparable<Fraction> {
         Fraction f14 = new Fraction(14, 15);
         Fraction f15 = new Fraction(15, 16);
 
-        // Crear un ArrayList y añadir las fracciones
         List<Fraction> fractionList = new ArrayList<>();
 
         fractionList.add(f9);
@@ -154,8 +157,51 @@ public class Fraction extends Number implements Comparable<Fraction> {
         Collections.sort(fractionList.reversed());
         System.out.println(fractionList);
 
-        System.out.println(Fraction.multiply(fractionList.get(0),fractionList.get(1)));
-        System.out.println(Fraction.division(fractionList.get(0),fractionList.get(1)));
-        System.out.println(fractionList.get(3).doubleValue());
+        System.out.println(Fraction.multiply(fractionList.get(0), fractionList.get(1)));
+        System.out.println(Fraction.division(fractionList.get(0), fractionList.get(1)));
+        System.out.println(fractionList.get(3).doubleValue());*/
+
+        System.out.println("-------------------------------------------");
+        // Crear 15 objetos Fraction con valores positivos y negativos
+        Fraction f1 = new Fraction(1, 2);
+        Fraction f2 = new Fraction(-3, 4);
+        Fraction f3 = new Fraction(5, -6);
+        Fraction f4 = new Fraction(-7, 8);
+        Fraction f5 = new Fraction(9, 10);
+        Fraction f6 = new Fraction(-11, 12);
+        Fraction f7 = new Fraction(13, 14);
+        Fraction f8 = new Fraction(15, -16);
+        Fraction f9 = new Fraction(-17, 18);
+        Fraction f10 = new Fraction(19, 20);
+        Fraction f11 = new Fraction(-21, 22);
+        Fraction f12 = new Fraction(23, -24);
+        Fraction f13 = new Fraction(-25, 26);
+        Fraction f14 = new Fraction(27, 28);
+        Fraction f15 = new Fraction(-29, 30);
+
+        // Crear un ArrayList y añadir las fracciones
+        List<Fraction> fractionList = new ArrayList<>();
+        fractionList.add(f1);
+        fractionList.add(f2);
+        fractionList.add(f3);
+        fractionList.add(f4);
+        fractionList.add(f8);
+        fractionList.add(f9);
+        fractionList.add(f10);
+        fractionList.add(f11);
+        fractionList.add(f12);
+        fractionList.add(f13);
+        fractionList.add(f14);
+        fractionList.add(f15);
+        fractionList.add(f5);
+        fractionList.add(f6);
+        fractionList.add(f7);
+
+        fractionList.add(new Fraction(-24,-15));
+        System.out.println(fractionList);
+        Collections.sort(fractionList);
+        System.out.println(fractionList);
+        Collections.sort(fractionList.reversed());
+        System.out.println(fractionList);
     }
 }
