@@ -29,6 +29,17 @@ public class FormattingDateOutputDifferentLanguages {
         System.out.println(pirateDay.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG).withLocale(Locale.ITALIAN)));
         System.out.println(pirateDay.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL).withLocale(Locale.ITALIAN)));
 
+        Locale[] locales = Locale.getAvailableLocales();
+
+        for(Locale locale: locales){
+            System.out.println("--------------------------------------");
+            System.out.println(locale.getDisplayCountry());
+            System.out.println(pirateDay.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT).withLocale(locale)));
+            System.out.println(pirateDay.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM).withLocale(locale)));
+            System.out.println(pirateDay.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG).withLocale(locale)));
+            System.out.println(pirateDay.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL).withLocale(locale)));
+        }
+
 
     }
 }
