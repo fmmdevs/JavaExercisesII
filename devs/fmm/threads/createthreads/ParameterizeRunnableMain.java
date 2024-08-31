@@ -1,4 +1,4 @@
-package devs.fmm.localedatetime.threads.createthreads;
+package devs.fmm.threads.createthreads;
 
 public class ParameterizeRunnableMain {
     public static void main(String[] args) {

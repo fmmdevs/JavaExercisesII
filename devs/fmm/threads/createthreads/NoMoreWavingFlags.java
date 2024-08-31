@@ -1,4 +1,4 @@
-package devs.fmm.localedatetime.threads.createthreads;
+package devs.fmm.threads.createthreads;
 
 import javax.swing.*;
 

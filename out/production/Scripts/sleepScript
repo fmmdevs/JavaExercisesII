@@ -1,0 +1,9 @@
+#!/bin/bash
+
+
+cd ../JavaExercisesII
+
+java devs.fmm.threads.executeandidle.Sleep 1 1 1 
+java devs.fmm.threads.executeandidle.Sleep 1m 1m
+java devs.fmm.threads.executeandidle.Sleep 1 1m 1h 2 2m 2h
+
