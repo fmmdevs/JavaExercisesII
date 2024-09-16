@@ -1,5 +1,7 @@
 package devs.fmm.datastructuresandalgorithms.lists;
 
+import java.util.Arrays;
+
 public class ReceiptUse {
     public static void main(String[] args) {
         Receipt receipt = new Receipt();
@@ -39,5 +41,11 @@ public class ReceiptUse {
         receipt1.addItem(new Receipt.Item("Juice", 275));
 
         System.out.println(receipt1);
+
+        int[] numbers1 = {1, 2, 3};
+        System.out.println(Arrays.asList(numbers1).contains(1));
+        Integer[] numbers = {1, 2, 3};
+        System.out.println(Arrays.asList(numbers).contains(1));
+        System.out.println(Arrays.asList(1, 2, 3).contains(1));
     }
 }
