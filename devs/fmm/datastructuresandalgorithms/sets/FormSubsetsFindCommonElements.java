@@ -6,6 +6,7 @@ import java.util.Set;
 
 public class FormSubsetsFindCommonElements {
     public static void main(String[] args) {
+        // Creating inmmutable sets with Set.of
         Set<String> hobbies1 = Set.of("Candy making", "Camping", "Billiards", "Fishkeeping", "Eating", "Action figures", "Birdwatching", "Axe throwing");
         Set<String> hobbies2 = Set.of("Axe throwing", "Candy making", "Camping", "Action figures", "Case modding", "Skiing", "Satellite watching");
 
@@ -23,8 +24,9 @@ public class FormSubsetsFindCommonElements {
         // coincidences----x
         double percentage1 = coincidences * 100 / hobbies1.size();
         double percentage2 = coincidences * 100 / hobbies2.size();
-        System.out.println("Percentage of similarity from 1 : "+percentage1+"%");
-        System.out.println("Percentage of similarity from 2 : "+percentage2+"%");
+        System.out.println("Percentage of similarity from 1 : " + percentage1 + "%");
+        System.out.println("Percentage of similarity from 2 : " + percentage2 + "%");
+
 
     }
 }
