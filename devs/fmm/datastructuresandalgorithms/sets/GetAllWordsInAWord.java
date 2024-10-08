@@ -53,9 +53,6 @@ public class GetAllWordsInAWord {
         try (BufferedWriter writer = new BufferedWriter(
                 new OutputStreamWriter(new FileOutputStream(englishWordsFile)))) {
 
-            // Escribir BOM para UTF-16 Big-Endian (opcional si OutputStreamWriter ya lo maneja)
-            //writer.write(0xFEFF);
-
             // Crear objeto URL desde String con la URL
             URL url = URI.create(urlTxt).toURL(); // 370,000 palabras
 
